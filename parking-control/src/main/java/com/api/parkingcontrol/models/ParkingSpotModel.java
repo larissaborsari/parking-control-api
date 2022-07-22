@@ -13,10 +13,12 @@ import java.util.UUID;
 public class ParkingSpotModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-    @Column(nullable = false, unique = true, length = 10)
+    @Id //inserindo um identificador para a classe principal
+    @GeneratedValue(strategy = GenerationType.AUTO)//id é gerado de forma automática
+    private UUID id; // do tipo UUID por ser único, universal, pode ser gerado em qualquer lugar, diminui o
+    //risco de gerar conflitos dentro da arquitetura
+    @Column(nullable = false, unique = true, length = 10) //nullable=false -> o campo não pode ser nulo;
+    // unique=true não pode ter valor repetido, só valor único
     private String parkingSpotNumber;
     @Column(nullable = false, unique = true, length = 7)
     private String licensePlateCar;
